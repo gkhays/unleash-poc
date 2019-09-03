@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gkh.release</groupId>
 	<artifactId>unleash-poc</artifactId>
@@ -32,7 +29,8 @@
 					<artifactId>maven-scm-plugin</artifactId>
 					<version>1.11.2</version>
 					<configuration>
-						<connectionType>connection</connectionType>
+<!-- 						<connectionType>connection</connectionType> -->
+						<connectionType>developerConnection</connectionType>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -41,8 +39,9 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/gkhays/unleash-poc</connection>
-		<!-- <developerConnection></developerConnection> -->
-		<url>https://github.com/gkhays/unleash-poc</url>
+		<developerConnection>scm:git:ssh://github.com:gkhays/unleash-poc.git</developerConnection>
+<!-- 		<url>https://github.com/gkhays/unleash-poc</url> -->
+			<url>git@github.com:gkhays/unleash-poc.git</url>
 	</scm>
 
 </project>
