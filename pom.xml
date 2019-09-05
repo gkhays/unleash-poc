@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gkh.release</groupId>
 	<artifactId>unleash-poc</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.3</version>
 
 	<properties>
 		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
@@ -29,7 +29,6 @@
 					<version>2.9.3</version>
 					<configuration>
 						<scmUsername>gkhays</scmUsername>
-						<scmPassword>fc2712ac4047236adc445174eb52d59d8e709d66</scmPassword>
 					</configuration>
 					<dependencies>
 						<dependency>
@@ -86,7 +85,7 @@
 		<connection>scm:git:https://github.com/gkhays/unleash-poc</connection>
 		<developerConnection>scm:git:https://github.com:gkhays/unleash-poc.git</developerConnection>
 		<url>https://github.com/gkhays/unleash-poc</url>
-<tag>HEAD</tag>
+<tag>0.0.3</tag>
 	</scm>
 	
 	<distributionManagement>
