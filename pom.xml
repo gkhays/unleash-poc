@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gkh.release</groupId>
 	<artifactId>unleash-poc</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 
 	<properties>
 		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
