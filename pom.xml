@@ -2,23 +2,34 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gkh.release</groupId>
 	<artifactId>unleash-poc</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
+		<!-- <maven.compiler.target>1.8</maven.compiler.target> -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- GitHub server corresponds to entry in ~/.m2/settings.xml -->
+		<github.global.server>github</github.global.server>
 	</properties>
 
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<plugin>
 					<groupId>com.itemis.maven.plugins</groupId>
 					<artifactId>unleash-maven-plugin</artifactId>
 					<version>2.9.3</version>
 					<configuration>
 						<scmUsername>gkhays</scmUsername>
-						<scmPassword>5cbe2211708a320a8b26492f9cf6698a4bb5d0e6</scmPassword>
+						<scmPassword>fc2712ac4047236adc445174eb52d59d8e709d66</scmPassword>
 					</configuration>
 					<dependencies>
 						<dependency>
@@ -37,6 +48,36 @@
 						<connectionType>developerConnection</connectionType>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.1</version>
+					<configuration>
+						<altDeploymentRepository>internal.repo::default::file//${project.build.directory}/mvn-repo</altDeploymentRepository>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.github.github</groupId>
+					<artifactId>site-maven-plugin</artifactId>
+					<version>0.11</version>
+					<configuration>
+						<message>Maven artifacts for ${project.version}</message>
+						<noJekyll>true</noJekyll>
+						<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+						<branch>refs/heads/mvn-repo</branch>
+						<includes><include>**/*</include></includes>
+						<repositoryName>unleash-poc</repositoryName>
+						<repositoryOwner>gkhays</repositoryOwner>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>site</goal>
+							</goals>
+							<phase>deploy</phase>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -47,5 +88,13 @@
 		<url>https://github.com/gkhays/unleash-poc</url>
 <tag>HEAD</tag>
 	</scm>
+	
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
 
 </project>
