@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gkh.release</groupId>
 	<artifactId>unleash-poc</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 
 	<properties>
 		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
@@ -85,7 +85,7 @@
 		<connection>scm:git:https://github.com/gkhays/unleash-poc</connection>
 		<developerConnection>scm:git:https://github.com:gkhays/unleash-poc.git</developerConnection>
 		<url>https://github.com/gkhays/unleash-poc</url>
-<tag>HEAD</tag>
+<tag>0.0.4</tag>
 	</scm>
 	
 	<distributionManagement>
