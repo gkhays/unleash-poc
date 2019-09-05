@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.gkh.release</groupId>
+  <artifactId>unleash-poc</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.5-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190905124311</lastUpdated>
+  </versioning>
+</metadata>
