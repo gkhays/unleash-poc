@@ -16,6 +16,8 @@
 					<groupId>com.itemis.maven.plugins</groupId>
 					<artifactId>unleash-maven-plugin</artifactId>
 					<version>2.9.3</version>
+					<configuration>
+					</configuration>
 					<dependencies>
 						<dependency>
 							<groupId>com.itemis.maven.plugins</groupId>
@@ -29,7 +31,7 @@
 					<artifactId>maven-scm-plugin</artifactId>
 					<version>1.11.2</version>
 					<configuration>
-<!-- 						<connectionType>connection</connectionType> -->
+						<!-- <connectionType>connection</connectionType> -->
 						<connectionType>developerConnection</connectionType>
 					</configuration>
 				</plugin>
@@ -39,9 +41,8 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/gkhays/unleash-poc</connection>
-		<developerConnection>scm:git:ssh://github.com:gkhays/unleash-poc.git</developerConnection>
-<!-- 		<url>https://github.com/gkhays/unleash-poc</url> -->
-			<url>git@github.com:gkhays/unleash-poc.git</url>
+		<developerConnection>scm:git:https://github.com:gkhays/unleash-poc.git</developerConnection>
+		<url>https://github.com/gkhays/unleash-poc</url>
 	</scm>
 
 </project>
